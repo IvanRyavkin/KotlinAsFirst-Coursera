@@ -2,8 +2,8 @@
 
 package lesson1.task1
 
-import java.lang.Math.pow
 import kotlin.math.PI
+import kotlin.math.pow
 import kotlin.math.sqrt
 
 /**
@@ -81,7 +81,7 @@ fun lengthInMeters(sagenes: Int, arshins: Int, vershoks: Int): Double =
  * Вывести значение того же угла в радианах (например, 0.63256).
  */
 fun angleInRadian(deg: Int, min: Int, sec: Int): Double =
-        deg * (PI / 180) + min * (PI / (180 * 60)) + sec * (PI / (180 * 3600))
+        (deg * PI / 180) + (min * PI / (180 * 60)) + (sec * PI / (180 * 3600))
 
 /**
  * Тривиальная
@@ -90,7 +90,7 @@ fun angleInRadian(deg: Int, min: Int, sec: Int): Double =
  * Например, расстояние между (3, 0) и (0, 4) равно 5
  */
 fun trackLength(x1: Double, y1: Double, x2: Double, y2: Double): Double =
-        sqrt(pow(x2 - x1, 2.0) + pow(y2 - y1, 2.0))
+        sqrt((x2 - x1).pow(2.0) + (y2 - y1).pow(2.0))
 
 /**
  * Простая
@@ -108,7 +108,7 @@ fun thirdDigit(number: Int): Int = (number / 100) % 10
  * Определите время поезда в пути в минутах (в данном случае 216).
  */
 fun travelMinutes(hoursDepart: Int, minutesDepart: Int, hoursArrive: Int, minutesArrive: Int): Int =
-        (hoursArrive - hoursDepart) * 60 + (minutesArrive - minutesDepart)
+        60 * (hoursArrive - hoursDepart) + (minutesArrive - minutesDepart)
 
 /**
  * Простая
@@ -117,7 +117,7 @@ fun travelMinutes(hoursDepart: Int, minutesDepart: Int, hoursArrive: Int, minute
  * Сколько денег будет на счету через 3 года (с учётом сложных процентов)?
  * Например, 100 рублей под 10% годовых превратятся в 133.1 рубля
  */
-fun accountInThreeYears(initial: Int, percent: Int): Double = initial * pow(1 + percent / 100.0, 3.0)
+fun accountInThreeYears(initial: Int, percent: Int): Double = initial * (1 + percent / 100.0).pow(3.0)
 
 /**
  * Простая
